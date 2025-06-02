@@ -108,15 +108,14 @@ html {
 
 body{
   background-color: var(--white);
-  overflow: hidden;
+  overflow-x: hidden;
 
 }
 
 ::-webkit-scrollbar {
-  width:10px;
+  width: 10px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {background-color: var(--white);}
 
 ::-webkit-scrollbar-thumb {
@@ -134,6 +133,65 @@ body{
 
 button, a {transition: var(--transition);}
 
+.h1,
+.h2,
+.h3 {
+  color:var(--dark-jungle-green);
+  font-family: var(--ff-poppins);
+  line-height: 1.3;
+}
+
+.h1 {
+  font-size: var(--fs-1);
+  line-height: 1;
+}
+
+.h2 { font-size: var(--fs-2) ;}
+
+.h3 {
+  font-size: var(--fs-4);
+  font-weight: var(--font-weight, 700);
+}
+
+.h3 > a { color: inherit;}
+
+.btn {
+  position: relative;
+  background: var(--orange-soda);
+  color: var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid var(--orange-soda);
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.btn:is(:hover, :focus){
+  background: var(--black);
+  color: var(--dark-jungle-green);
+  border-color: var(--black);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--white);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.btn:is(:hover, :focus)::before {width: 100%;}
+
+.w-100 {width: 100%;}
+
+
+
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -146,7 +204,7 @@ button, a {transition: var(--transition);}
 
 .header-top{
   background: var(--prussian-blue);
-  padding-block:15px;
+  padding-block: 15px;
 }
 
 .header-top .container,
@@ -159,9 +217,9 @@ button, a {transition: var(--transition);}
 }
 
 
-.header-top .container { gap: 8px 20px;}
+.header-top .container { gap: 8px 20px; }
 
-.header-top-list {gap: 15px;}
+.header-top-list { gap: 15px; }
 
 .header-top-link {
   color: var(--white);
@@ -172,6 +230,7 @@ button, a {transition: var(--transition);}
   align-items: center;
   gap: 5px;
 }
+
 
 .header-top-link:is(:hover, :focus) {color:var(--orange-soda);}
 
@@ -197,7 +256,7 @@ button, a {transition: var(--transition);}
   font-size: 15px;
 }
 
-.header-top-btn{
+.header-top-btn {
   background: var(--orange-soda);
   color: var(--white);
   font-size: var(--fs-6);
@@ -205,9 +264,15 @@ button, a {transition: var(--transition);}
   padding: 4px 15px;
 }
 
-.header-top-btn:is(:hover, :focus) { --orange-soda: hsl(7,72%,46%) }
+.header-top-btn:is(:hover, :focus) { --orange-soda: hsl(7, 72%, 46%); }
 
-.header-bottom .logo img { margin-inline: auto;}
+.header-bottom {
+  background: var(--white);
+  padding-block: 25px;
+}
+
+
+.header-bottom .logo img { margin-inline: auto; }
 
 .navbar {
   background: var(--white);
@@ -215,6 +280,7 @@ button, a {transition: var(--transition);}
   top: 0;
   left: -310px;
   max-width: 300px;
+  width:100%;
   height: 100%;
   box-shadow: 0 3px 10px hsla(0, 0%, 0%, 0.3);
   z-index: 5;
@@ -240,7 +306,8 @@ button, a {transition: var(--transition);}
 
 }
 
-.navbar-top .logo img { width: 200px;}
+
+.navbar-top .logo img { width: 200px; }
 
 
 .nav-close-btn ion-icon {
@@ -261,24 +328,23 @@ button, a {transition: var(--transition);}
 
 
 .overlay {
-  position:fixed;
-  inset:0;
-  background-color: hsla(0, 0%, 0%, 0.7);
+  position: fixed;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.7);
   opacity: 0;
   pointer-events: none;
   transition: var(--transition);
   z-index: 4;
-
 }
 
-.overlay.active{
+.overlay.active {
   opacity: 1;
   pointer-events: all;
 }
 
 .header-bottom-actions {
   background: var(--white);
-  position:fixed;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -302,9 +368,56 @@ button, a {transition: var(--transition);}
 
 .header-bottom-actions-btn:is(:hover, :focus) ion-icon {color:var(--orange-soda);}
 
+.header-bottom {
+  background: var(--white);
+  padding-block: 25px;
+}
 .header-bottom-actions-btn span {
   color: var(--cadet);
   font-family: var(--ff-poppins);
   font-size: var(--fs-7);
   font-weight: var(--fw-500);
 }
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  background:var(--cultured-2);
+  padding-block: var(--section-padding);
+}
+
+.hero-content{ margin-bottom: 60px;}
+
+.hero-subtitle{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle ion-icon {color:var(--orange-soda); }
+
+.hero-subtitle span {
+  color:var(--dark-jungle-green);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-700);
+}
+
+.hero-title {margin: bottom 20px;}
+
+.hero-text{
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  line-height: 1.8;
+  padding-left: 15px;
+  border-left: 1px solid;
+  margin-bottom: 30px;
+}
+
+/*-----------------------------------*\
+  #About
+\*-----------------------------------*/
