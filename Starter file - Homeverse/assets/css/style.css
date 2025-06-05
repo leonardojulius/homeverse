@@ -213,7 +213,21 @@ button, a {transition: var(--transition);}
   margin-bottom: var(--margin-bottom, 50px);
 }
 
+.card-badge {
+  background: var(--black);
+  color: var(--white);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 10px;
 
+}
+
+.card-badge.green { background: var(--yellow-green);}
+
+.card-badge.orange { background: var(--orange-soda);}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -597,3 +611,130 @@ max-width: max-content;
 
 
 .service-card:is(:hover, :focus)::after{width: 100%;}
+
+
+/*-----------------------------------*\
+  #PROPERTY
+\*-----------------------------------*/
+
+.property{padding-block: var(--section-padding);}
+
+.property-card .card-banner::before{
+
+  content: "";
+  position: absolute;
+  inset:0;
+  background: linear-gradient(to top, hsla(0,0%,0%,0.95),transparent 30%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.property-card .banner-actions{
+  position:absolute;
+  bottom: 15px;
+  left: 15px;
+  right:15px;
+  display: flex;
+  flex-wrap:wrap-reverse ;
+  align-items: center;
+  gap: 15px 10px;
+  z-index: 1;
+
+}
+
+.banner-actions-btn {
+  color: var(--white);
+  font-size: var(--fs-6);
+  line-height: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.banner-actions-btn ion-icon {font-family: 16px;}
+
+.banner-actions-btn:first-child { margin-right: auto;}
+
+.banner-actions-btn:is(:hover, :focus) {color:var(--orange-soda);}
+
+
+.property-card .card-content {
+  padding: 30px 15px 15px;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.card-price {
+  color: var(--orange-soda);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  margin-bottom: 5px;
+}
+
+.card-price strong {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+}
+
+.property-card .card-title {
+  --font-weight: var(--fw-600);
+  margin-bottom: 15px;
+}
+
+.property-card .card-title > a:is(:hover, :focus) { color: var(--orange-soda);}
+
+.property-card .card-text {
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.property-card .card-title {
+  --font-weight: var(--fw-600);
+  margin-bottom: 15px;
+}
+
+.property-card .card-title > a:is(:hover, :focus) {color: var(--orange-soda);}
+
+
+.property-card .card-text {
+  color: var(--cadet);
+  font-size:var(--fs-5);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+
+.property-card .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.property-card .card-item {
+  padding-block: 5px;
+  color:var(--cadet);
+  font-size: var(--fs-5);
+}
+
+.property-card .card-item:not(:last-child){
+  padding-right: 15px;
+  border-right: 1px solid hsla(0, 0%, 0%, 0.2);
+  margin-right: 20px;
+}
+
+.property-card .card-item :is(strong, ion-icon){display: inline-block;}
+
+.property-card .card-item ion-icon{
+  margin-left:2px;
+  margin-bottom: -2px;
+}
+
+.property-card .card-item span { margin-top: 5px;}
+
+.card-footer {
+  padding: 15px;
+  display: flex;
+}
