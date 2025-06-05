@@ -559,3 +559,41 @@ max-width: max-content;
   margin-inline: auto;
   margin-bottom: 20px;
 }
+
+.service-card .card-title {margin-bottom: 15px;}
+
+.service-card .card-title > a:is(:hover, :focus) {color:var(--orange-soda); }
+
+.service-card .cad-text {
+  color:var(--cadet);
+  font-size: var(--fs-5);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.service-card .card-link {
+   color: var(--opal);
+   font-size:var(--fs-5);
+   font-weight: var(--fw-600);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+
+.service-card:is(:hover, :focus) .card-link { color:var(--orange-soda) }
+
+
+.service-card::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--orange-soda);
+  transition: var(--transition);
+}
+
+
+.service-card:is(:hover, :focus)::after{width: 100%;}
