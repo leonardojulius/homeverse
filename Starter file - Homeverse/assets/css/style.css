@@ -722,3 +722,33 @@ max-width: max-content;
   color: var(--cadet);
   font-size: var(--fs-5);
 }
+
+.property-card .card-item:not(:last-child) {
+  padding-right: 15px;
+  border-right: 1px solid hsla(0, 0%, 0%, 0.2);
+  margin-right: 20px;
+}
+
+.property-card .card-item :is(strong, ion-icon){display: inline-block; }
+
+.property-card .card-item ion-icon {
+  margin-left: 2px;
+  margin-bottom: -2px;
+}
+
+.property-card .card-item span {margin-top: 5px;}
+
+.card-footer {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
