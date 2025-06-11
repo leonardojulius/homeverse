@@ -228,6 +228,15 @@ button, a {transition: var(--transition);}
 .card-badge.green { background: var(--yellow-green);}
 
 .card-badge.orange { background: var(--orange-soda);}
+
+
+
+
+
+
+
+
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -753,7 +762,7 @@ max-width: max-content;
   gap: 10px;
 }
 
-.autor-avatar {
+.author-avatar {
   width: 40px;
   height: 40px;
   overflow: hidden;
