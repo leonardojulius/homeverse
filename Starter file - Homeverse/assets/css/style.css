@@ -1031,3 +1031,15 @@ max-width: max-content;
 }
 
 .cta-btn::before {background: var(--black);}
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  background:var (--raisin-black-1);
+  color:var(--white);
+  margin-bottom: 68px;
+  
+}
